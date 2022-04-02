@@ -24,12 +24,16 @@ app.use(
 );
 
 // import in routes
+const landingRoutes = require('./routes/landing')
+const productRoutes = require('./routes/products')
 
 
 async function main() {
     app.get('/', function (req, res) {
         res.send("It's alive!")
     })
+
+    app.use('/products', productRoutes);	
 }
 
 main();
