@@ -29,12 +29,10 @@ const productRoutes = require('./routes/products')
 
 
 async function main() {
-    app.get('/', function (req, res) {
-        res.send("It's alive!")
-    })
-
+    app.use('/', landingRoutes);
     app.use('/products', productRoutes);	
 }
+
 
 main();
 app.listen(3000, function () {
